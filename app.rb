@@ -1,19 +1,15 @@
 require 'sinatra/base'
-class App < Sinatra::Base
+require './lib/bookmark'
+class BookmarkManager < Sinatra::Base
   enable :sessions
   get '/' do
     redirect('/bookmarks')
   end
 
   get '/bookmarks' do
-    bookmarks = [
-      "http://makersacademy.com",
-      "http://destroyallsoftware.com",
-      "http://facebook.com"
-     ]
-
-     bookmarks.join
-
+    @bookmarks = Bookmarks.all
+     
+erb :index     
   end
 
   run! if app_file == $PROGRAM_NAME

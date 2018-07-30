@@ -22,5 +22,5 @@ RSpec.configure do |config|
   require 'rspec'
 
   # tell Capybara about our app class
-  Capybara.app = App
+  Capybara.app = BookmarkManager
 end

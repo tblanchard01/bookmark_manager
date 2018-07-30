@@ -1,0 +1,39 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/timothyblanchard/Projects/Makers/bookmark_manager/app.rb": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/timothyblanchard/Projects/Makers/bookmark_manager/spec/viewing_bookmarks_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1532959788
+  }
+}

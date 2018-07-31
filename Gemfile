@@ -7,7 +7,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gem 'rake'
 gem 'shotgun'
 gem 'sinatra'
-gem 'solargraph '
+gem 'solargraph'
 group :test do
   gem 'capybara'
   gem 'rspec'
@@ -15,4 +15,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'pg'
 end

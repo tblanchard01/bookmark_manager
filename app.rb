@@ -1,7 +1,11 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/bookmark'
+require 'uri'
+
 class BookmarkManager < Sinatra::Base
   enable :sessions
+  register Sinatra::Flash
   get '/' do
     redirect('/bookmarks')
   end
@@ -16,11 +20,14 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
-    url = params['url']
-    connection = PG.connect(dbname: 'bookmark_manager_test')
-    connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
-    redirect '/bookmarks'
+    if params['url'] =~ /\A#{URI::regexp(['http', 'https'])}\z/
+      Bookmark.create(url:params['url'])
+    else 
+      flash[:notice] = "You must submit a valid URL" 
+    end
+    redirect('/bookmarks')
   end
+
 
   run! if app_file == $PROGRAM_NAME
 end

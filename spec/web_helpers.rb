@@ -1,6 +1,5 @@
 def add_bookmarks
-  connection = PG.connect(dbname: 'bookmark_manager_test')
-  connection.exec("INSERT INTO bookmarks (url) VALUES ('http://makersacademy.com');")
-  connection.exec("INSERT INTO bookmarks (url) VALUES('http://destroyallsoftware.com');")
-  connection.exec("INSERT INTO bookmarks (url) VALUES('http://google.com');")
+  Bookmark.create(url: "http://makersacademy.com")
+  Bookmark.create(url: "http://destroyallsoftware.com")
+  Bookmark.create(url: "http://google.com")
 end

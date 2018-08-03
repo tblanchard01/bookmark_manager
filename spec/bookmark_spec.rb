@@ -1,7 +1,7 @@
 require 'bookmark'
 describe '.all' do
   it 'returns all bookmarks' do
-    add_bookmarks   
+    add_bookmarks
     bookmarks = Bookmark.all
     expect(bookmarks).to include('http://makersacademy.com')
     expect(bookmarks).to include('http://destroyallsoftware.com')
